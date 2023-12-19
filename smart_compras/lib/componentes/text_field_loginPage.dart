@@ -9,7 +9,7 @@ InputDecoration getAuthenticationInputDecoration(String label) {
       ),
       fillColor: Colors.white,
       filled: true,
-      contentPadding: const EdgeInsets.all(12),
+      contentPadding: const EdgeInsets.all(16),
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(7),
         borderSide: const BorderSide(width: 0, style: BorderStyle.none),

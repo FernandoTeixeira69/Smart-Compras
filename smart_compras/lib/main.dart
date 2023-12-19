@@ -1,6 +1,5 @@
 import "package:flutter/material.dart";
 import "package:smart_compras/login.dart";
-import 'dart:ui';
 
 void main() {
   runApp(const MyApp());
@@ -11,10 +10,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: 'Flutter Demo',
-      home: LoginPage()
-    );
+    return const MaterialApp(title: 'Flutter Demo',
+     home: MyHomePage());
   }
 }
 
@@ -25,17 +22,18 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: 63,
+        toolbarHeight: 65,
         shape:
-          ContinuousRectangleBorder(borderRadius: BorderRadius.circular(20)),
+            ContinuousRectangleBorder(borderRadius: BorderRadius.circular(55)),
         elevation: 0,
         backgroundColor: const Color(0xFFFF4950),
         centerTitle: true,
         title: const Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
+          //  crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(
               'SMART COMPRAS',
+              textAlign: TextAlign.center,
               style: TextStyle(
                   fontWeight: FontWeight.w600,
                   fontSize: 22,
@@ -47,6 +45,7 @@ class MyHomePage extends StatelessWidget {
                   fontWeight: FontWeight.w600,
                   fontSize: 20,
                   color: Colors.white),
+              textAlign: TextAlign.center,
             ),
           ],
         ),
@@ -57,7 +56,11 @@ class MyHomePage extends StatelessWidget {
             color: Colors.white,
             onPressed: () {
               Navigator.push(
-                context, MaterialPageRoute(builder: (context) => LoginPage()),
+                context,
+                MaterialPageRoute(builder: (context) {
+                  return LoginPage();
+                }
+                ),
               );
             },
           ),

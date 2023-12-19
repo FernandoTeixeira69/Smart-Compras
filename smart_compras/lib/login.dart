@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:smart_compras/componentes/text_field_loginPage.dart';
-//import 'package:flutter_svg/flutter_svg.dart';
+import 'package:smart_compras/main.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -16,7 +16,22 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
+      appBar: AppBar(
+        backgroundColor: const Color(0xFFFF4950),
+        leading: IconButton(
+          onPressed: () {
+          Navigator.pop(context,
+            MaterialPageRoute(builder: (context) {return const MyHomePage();
+            },
+          ),
+        );
+      },
+      icon: const Icon(Icons.arrow_back,
+      color: Colors.white,
+      size: 48,
+      ),
+    ),
+  ),
       backgroundColor: const Color(0xFFFF4950),
       body: Padding(
         padding: const EdgeInsets.all(16),
@@ -29,11 +44,11 @@ class _LoginPageState extends State<LoginPage> {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Image.asset(
-                    'android/assets/icons/logo1.png',
+                    'android/assets/icons/logo2.png',
                     height: 200,
-                    width: 240,
+                    width: 200,
                   ),
-                  const SizedBox(height: 48),
+                  const SizedBox(height: 64),
                   TextFormField(
                     decoration: getAuthenticationInputDecoration('E-mail'),
                     validator: (String? value) {
@@ -80,10 +95,10 @@ class _LoginPageState extends State<LoginPage> {
                     },
                     style: ElevatedButton.styleFrom(
                       shape: ContinuousRectangleBorder(
-                        borderRadius: BorderRadius.circular(14),
+                        borderRadius: BorderRadius.circular(12),
                       ),
-                      backgroundColor: Color(0xFFFFFFFF),
-                      fixedSize: const Size(0, 46),
+                      backgroundColor: Colors.white,
+                      fixedSize: const Size(0, 56),
                     ),
                     child: Text(
                       (wantEnter) ? 'Entrar' : 'Cadastrar-se',
@@ -107,6 +122,7 @@ class _LoginPageState extends State<LoginPage> {
                           ? 'Ainda não tem uma conta? Cadastre-se!'
                           : 'Já tem tem uma conta?'),
                       style: const TextStyle(
+                        fontSize: 15,
                         color: Colors.white,
                         fontWeight: FontWeight.w800,
                       ),
@@ -116,23 +132,21 @@ class _LoginPageState extends State<LoginPage> {
                     onPressed: () {},
                     style: ElevatedButton.styleFrom(
                       shape: ContinuousRectangleBorder(
-                        borderRadius: BorderRadius.circular(14),
+                        borderRadius: BorderRadius.circular(12),
                       ),
                       backgroundColor: Colors.white,
-                      //  fixedSize: Size(0, 44),
                     ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Image.asset(
                           'android/assets/icons/logo_google.png',
-                          width: 49,
-                          height: 49,
+                          width: 56,
+                          height: 56,
                         ),
-                        const SizedBox(
-                          width: 10),
+                        const SizedBox(width: 10),
                         const Text(
-                          'Continuar com Google  ',
+                          'Continuar com Google    ',
                           style: TextStyle(
                             color: Color(0XFFFF4950),
                             fontSize: 18,
@@ -142,26 +156,24 @@ class _LoginPageState extends State<LoginPage> {
                       ],
                     ),
                   ),
-                  SizedBox(height: 16),
+                  const SizedBox(height: 16),
                   ElevatedButton(
                     onPressed: () {},
                     style: ElevatedButton.styleFrom(
                       shape: ContinuousRectangleBorder(
-                        borderRadius: BorderRadius.circular(14),
+                        borderRadius: BorderRadius.circular(12),
                       ),
                       backgroundColor: Colors.white,
-                      // fixedSize: Size(0, 44),
                     ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Image.asset(
                           'android/assets/icons/logo_facebook.png',
-                          width: 49,
-                          height: 49,
+                          width: 56,
+                          height: 56,
                         ),
-                         const SizedBox(
-                          width: 8),
+                        const SizedBox(width: 8),
                         const Text(
                           'Continuar com Facebook',
                           style: TextStyle(
