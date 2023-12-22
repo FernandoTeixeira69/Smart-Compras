@@ -1,3 +1,4 @@
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter/material.dart';
 import 'package:smart_compras/componentes/text_field_loginPage.dart';
 import 'package:smart_compras/main.dart';
@@ -20,18 +21,22 @@ class _LoginPageState extends State<LoginPage> {
         backgroundColor: const Color(0xFFFF4950),
         leading: IconButton(
           onPressed: () {
-          Navigator.pop(context,
-            MaterialPageRoute(builder: (context) {return const MyHomePage();
-            },
+            Navigator.pop(
+              context,
+              MaterialPageRoute(
+                builder: (context) {
+                  return const MyHomePage();
+                },
+              ),
+            );
+          },
+          icon: const Icon(
+            Icons.arrow_back,
+            color: Colors.white,
+            size: 48,
           ),
-        );
-      },
-      icon: const Icon(Icons.arrow_back,
-      color: Colors.white,
-      size: 48,
+        ),
       ),
-    ),
-  ),
       backgroundColor: const Color(0xFFFF4950),
       body: Padding(
         padding: const EdgeInsets.all(16),
@@ -43,12 +48,12 @@ class _LoginPageState extends State<LoginPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  Image.asset(
-                    'android/assets/icons/logo2.png',
+                  SvgPicture.asset(
+                    'android/assets/icons/logo_smart_compras.svg',
                     height: 200,
                     width: 200,
                   ),
-                  const SizedBox(height: 64),
+                  const SizedBox(height: 48),
                   TextFormField(
                     decoration: getAuthenticationInputDecoration('E-mail'),
                     validator: (String? value) {
@@ -103,7 +108,7 @@ class _LoginPageState extends State<LoginPage> {
                     child: Text(
                       (wantEnter) ? 'Entrar' : 'Cadastrar-se',
                       style: const TextStyle(
-                          fontSize: 18,
+                          fontSize: 20,
                           color: Color(0XFFFF4950),
                           fontWeight: FontWeight.w800),
                     ),
@@ -139,8 +144,9 @@ class _LoginPageState extends State<LoginPage> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Image.asset(
-                          'android/assets/icons/logo_google.png',
+                        SvgPicture.asset(
+                          'android/assets/icons/icon_google.svg',
+                          fit: BoxFit.scaleDown,
                           width: 56,
                           height: 56,
                         ),
@@ -149,7 +155,7 @@ class _LoginPageState extends State<LoginPage> {
                           'Continuar com Google    ',
                           style: TextStyle(
                             color: Color(0XFFFF4950),
-                            fontSize: 18,
+                            fontSize: 20,
                             fontWeight: FontWeight.w800,
                           ),
                         ),
@@ -168,9 +174,9 @@ class _LoginPageState extends State<LoginPage> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Image.asset(
-                          'android/assets/icons/logo_facebook.png',
-                          width: 56,
+                        SvgPicture.asset(
+                          'android/assets/icons/icon_facebook.svg',
+                          //  width: 56,
                           height: 56,
                         ),
                         const SizedBox(width: 8),
@@ -178,7 +184,7 @@ class _LoginPageState extends State<LoginPage> {
                           'Continuar com Facebook',
                           style: TextStyle(
                             color: Color(0XFFFF4950),
-                            fontSize: 18,
+                            fontSize: 20,
                             fontWeight: FontWeight.w800,
                           ),
                         ),

@@ -24,16 +24,14 @@ class MyHomePage extends StatelessWidget {
       appBar: AppBar(
         toolbarHeight: 65,
         shape:
-            ContinuousRectangleBorder(borderRadius: BorderRadius.circular(55)),
+        ContinuousRectangleBorder(borderRadius: BorderRadius.circular(32)),
         elevation: 0,
         backgroundColor: const Color(0xFFFF4950),
         centerTitle: true,
         title: const Column(
-          //  crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(
               'SMART COMPRAS',
-              textAlign: TextAlign.center,
               style: TextStyle(
                   fontWeight: FontWeight.w600,
                   fontSize: 22,
@@ -45,7 +43,6 @@ class MyHomePage extends StatelessWidget {
                   fontWeight: FontWeight.w600,
                   fontSize: 20,
                   color: Colors.white),
-              textAlign: TextAlign.center,
             ),
           ],
         ),
